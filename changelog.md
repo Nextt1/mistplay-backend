@@ -21,3 +21,6 @@
     - orderting by rating added / default with secondary ordering by rcount
 ### Changed
     - Better commenting
+
+## [1.0.2] - 20-02-2020
+    - pending work section added in readme file 

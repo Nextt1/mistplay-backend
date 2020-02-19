@@ -21,6 +21,13 @@
         - minimun - rating
         - minimun - rCount
 
+### Pending Work
+    - AWS Hosting
+    - Try to setup Caching
+        - Local - Redis
+        - Server - Elasticache
+    - Try to improve the fetching and basic manipulation of the data
+
 ### URLS to be used
     - /search (deault first 10 results will be pulled)
     - /search?page=1 (define the page number at which you want the data)
