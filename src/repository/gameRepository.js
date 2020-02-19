@@ -12,8 +12,9 @@ const HELPER = require("./../helper");
   * @param -
   * @return object - game data
 */
-exports.queryByName = async (name, page = 1) => {
+exports.queryByName = async (name, page = 1, orderBy, orderType) => {
     let data;
+    //converting the query to lowercase
     name = name.toLowerCase();
     
     try{
@@ -22,7 +23,7 @@ exports.queryByName = async (name, page = 1) => {
         return {data: {}, message: "Can not load the data", errorCode: 300};
     }
 
-    const simpleMatch = [];
+    let simpleMatch = [];
 
     for(let key in data){
         const title = data[key].title.toLowerCase();
@@ -30,7 +31,15 @@ exports.queryByName = async (name, page = 1) => {
         if(title.includes(name)){
             simpleMatch.push(data[key]);
         }
-    }
 
-    return { data: { results: HELPER.pagination(simpleMatch, page), totalResults: simpleMatch.length }, message: "Data loaded successfully", erroCode: 200};
+    }
+    
+    // if(orderBy == "rating"){
+        simpleMatch = HELPER.sortArrayOfObjectsByNumber(simpleMatch, orderBy, orderType);
+    // }else{
+        // simpleMatch = HELPER.sortArrayOfObjectsByText(simpleMatch, orderBy, orderType);
+    // }
+
+    return {simpleMatch};
+    // return { data: { results: HELPER.pagination(simpleMatch, page), totalResults: simpleMatch.length }, message: "Data loaded successfully", erroCode: 200};
 }

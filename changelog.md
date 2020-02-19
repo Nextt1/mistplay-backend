@@ -15,3 +15,9 @@
     - game Service
     - helper functions
     - changelog
+
+## [1.0.1] - 20-02-2020
+### Added
+    - orderting by rating added / default with secondary ordering by rcount
+### Changed
+    - Better commenting
