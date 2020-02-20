@@ -40,6 +40,6 @@ exports.queryByName = async (name, page = 1, orderBy, orderType) => {
         // simpleMatch = HELPER.sortArrayOfObjectsByText(simpleMatch, orderBy, orderType);
     // }
 
-    return {simpleMatch};
-    // return { data: { results: HELPER.pagination(simpleMatch, page), totalResults: simpleMatch.length }, message: "Data loaded successfully", erroCode: 200};
+    // return {simpleMatch};
+    return { data: { results: HELPER.pagination(simpleMatch, page), totalResults: simpleMatch.length }, message: "Data loaded successfully", erroCode: 200};
 }

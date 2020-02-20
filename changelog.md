@@ -24,3 +24,8 @@
 
 ## [1.0.2] - 20-02-2020
     - pending work section added in readme file 
+
+## [1.0.3] - 20-02-2020
+### fixes
+    - Pagination was not working
+    - gitignore file added
