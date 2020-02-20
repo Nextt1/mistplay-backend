@@ -27,7 +27,6 @@ exports.queryByName = async (name, page = 1, orderBy, orderType) => {
 
     for(let key in data){
         const title = data[key].title.toLowerCase();
-        console.log(title);
         if(title.includes(name)){
             simpleMatch.push(data[key]);
         }
