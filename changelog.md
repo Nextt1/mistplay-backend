@@ -35,3 +35,7 @@
     - Redis added for caching to increse the performance
         - fetching the data will be cached and will be deleted periodically(can trigger this event when required)
         - the query result will aslo be cached
+
+## [1.0.5] - 21-02-2020
+### Fixes
+    - Redis server changed to elasticache
