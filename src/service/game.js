@@ -9,7 +9,7 @@
 
 const jsonfile = require('jsonfile')
 const filePath = __dirname + "/../../assets/games.json";
-const config = require("./../confing");
+const config = require("../config");
 const asyncRedis  = require("async-redis");
 
 const client = asyncRedis.createClient({

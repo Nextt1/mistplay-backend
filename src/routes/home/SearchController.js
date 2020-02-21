@@ -7,7 +7,7 @@
 const gameRepository = require('./../../repository/gameRepository');
 const ORDER_BY = ["rating"]
 const ORDER_TYPE = ["asc", "desc"];
-const config = require("./../../confing");
+const config = require("../../config");
 const asyncRedis = require("async-redis");
 
 const client = asyncRedis.createClient({
@@ -27,8 +27,6 @@ exports.search = async (req, res) => {
 	const orderBy = req.query.orderBy && ORDER_BY.indexOf(req.query.orderBy) ? req.query.orderBy : "rating";
 	const orderType = req.query.orderType && ((req.query.orderType == "desc") || (req.query.orderType == "asc")) ? req.query.orderType : "desc";
 
-	console.log(query + "_" + page + "_" + orderBy + "_" + orderType);
-	
 	let data = null;
 	if (config.CACHE) {
 		data = await client.get(query + "_" + page + "_" + orderBy + "_" + orderType);
@@ -39,7 +37,6 @@ exports.search = async (req, res) => {
 	if(data == null){
 		data = await gameRepository.queryByName(query, page, orderBy, orderType);
 		client.set( query + "_" + page + "_" + orderBy + "_" + orderType, JSON.stringify(data));
-		console.log("NOT CACHED DATA");
 	}
 
 	res.send(data);

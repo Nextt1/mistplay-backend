@@ -35,14 +35,11 @@ exports.queryByName = async (name, page = 1, orderBy, orderType) => {
         }
     }
     
-    console.log(genre);
-    console.log(subgenre);
     if(orderBy == "rating"){
         simpleMatch = HELPER.sortArrayOfObjectsByNumber(simpleMatch, orderBy, orderType);
     }else{
         simpleMatch = HELPER.sortArrayOfObjectsByText(simpleMatch, orderBy, orderType);
     }
 
-    // return {simpleMatch};
     return { data: { results: HELPER.pagination(simpleMatch, page), totalResults: simpleMatch.length }, message: "Data loaded successfully", erroCode: 200};
 }
