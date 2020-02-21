@@ -14,7 +14,6 @@ exports.pagination = (data, page) => {
 }
 
 exports.sortArrayOfObjectsByNumber = (data, key, orderType) => {
-  console.log(key, orderType);
   if(key == "rating"){
     function compare(a, b) {
   
@@ -43,7 +42,7 @@ exports.sortArrayOfObjectsByText = (data, key, orderType) => {
     } else if (keyA < keyB) {
       comparison = -1;
     }
-    if(orderType == "asc"){
+    if(orderType == "desc"){
       comparison = comparison * -1;
     }
     // console.log(keyA, keyB, comparison, orderType, orderType === "asc");

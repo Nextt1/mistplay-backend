@@ -39,3 +39,8 @@
 ## [1.0.5] - 21-02-2020
 ### Fixes
     - Redis server changed to elasticache
+
+## [1.0.6] - 21-02-2020
+### Fixes
+    - Typo fixes in changelogs
+    - Typo in readme file

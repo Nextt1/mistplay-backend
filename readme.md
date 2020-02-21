@@ -1,8 +1,8 @@
-### Run the following commnd to start the server
+## Run the following commnd to start the server
 
     npm run-scripts run
 
-### To setup the project locally, Run the following command
+## To setup the project locally, Run the following command
 
     npm install
 
@@ -13,7 +13,7 @@
 - ~~ignore case sensitivity of the user's input~~
 - ~~ignore case sensitivity in the server's data~~
 - ~~sort the result by rating (most to least) (default)~~
-- ~~ordering (Asc & Desc)
+- ordering (Asc & Desc)
     1. name (working on)
     2. ~~rating~~
 - filter
@@ -34,8 +34,8 @@
 
 - /search (deault first 10 results will be pulled)
 - /search?page=1 (define the page number at which you want the data)
-- /search?orderBy="rating"&orderType="asc" (will order by rating and in asc order) (will take most to tcount in case of same rating)
-- /search?orderBy="rating"&orderType="desc" will order by rating and in desc order) (will take most to tcount in case of same rating)
+- /search?orderBy=rating&orderType=asc (will order by rating and in asc order) (will take most to tcount in case of same rating)
+- /search?orderBy=rating&orderType=desc will order by rating and in desc order) (will take most to tcount in case of same rating)
 
 ## Live server URL 
 
@@ -44,3 +44,4 @@
 - AWS EC2 instance is used to host the backend of the application
 - AWS Elasticache is used for redis server.
 - VPC is created since Elasticache can not be accessed from outside the VPC it belongs too.
+- PM2 is used to run the process in background.
